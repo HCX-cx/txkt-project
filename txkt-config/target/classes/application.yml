@@ -1,0 +1,22 @@
+server:
+  port: 7500
+spring:
+  application:
+    name: txkt-config
+
+    #使用本地配置
+    #profiles:
+    #active: native
+  cloud:
+    config:
+      server:
+        #native:
+        #search-locations: classpath:properties/
+        git:
+          uri: https://github.com/HCX-cx/txkt-config.git
+          search-paths: txkt-config
+          default-label: main
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka

@@ -1,0 +1,18 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: txkt-zuul
+  cloud:
+    config:
+      #uri: http://localhost:7500
+      discovery:
+        service-id: txkt-config
+        enabled: true
+      name: txkt
+      profile: dev
+      label: main
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
